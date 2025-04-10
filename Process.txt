@@ -13,6 +13,8 @@
 
 5. First we will see if we sink with repository.
 
+
+    when doing first time
     git init
     git add README.md
     git commit -m "first commit"
@@ -21,6 +23,11 @@
     git push -u origin main
     if we did change in my repository and want to be present in work area, do
     git pull
+
+    And we have anything we need to add in repository
+    git add .
+    git commit -m "abc"
+    git push -u origin main
     
 6. We need to create requirements.txt
 
