@@ -1,0 +1,9 @@
+Agenda
+
+1- Set up the github {Repository}. So in team we can be working together and merging it together.
+    a. New environment
+    b. Setup.py
+    c. Requirements.txt
+
+2. Src Folder and package creation
+

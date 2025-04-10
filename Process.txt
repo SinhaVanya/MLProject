@@ -1,0 +1,42 @@
+1. Create repository in Github by clicking new and Give the name and create repository.
+2. Open the folder in vscode
+3. Create environment
+
+    Open the terninal and open command prompt in it.
+    conda create -p venv python==3.8 -y
+    cls- clear screen
+    conda activate venv/
+
+4. Create a Readme file
+
+    This is a file where you can write project description
+
+5. First we will see if we sink with repository.
+
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/SinhaVanya/MLProject.git
+    git push -u origin main
+    if we did change in my repository and want to be present in work area, do
+    git pull
+    
+6. We need to create requirements.txt
+
+    This will have all the packages that we really need to install while we are implementing the project
+
+7. Now we need to have setup.py
+
+    (This setup.py will be responsible in creating my machine learning application as a package. This package can be installed in our project or in another project as well.)
+    in setup.py, install_requires, we put modules that we require. But it is not feasible to write all here.
+    So instead of install_requires=['pandas','numpy,'seaborn'] write install_requires=get_requirements('E:\udemy\Data_Science\requirements.txt')
+
+8.Create src folder
+
+    Entire project development will happen in src folder
+
+9. In src folder create __init__.py file.
+
+    So whenever in setup.py, find_packages is there, it will just go and see how many folder have __init__.py then it will consider that as a package and will try to build this
+    Once this is built it, we can import it anywhere whenever we want.
