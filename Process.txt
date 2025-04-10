@@ -17,7 +17,7 @@
     git add README.md
     git commit -m "first commit"
     git branch -M main
-    git remote add origin https://github.com/SinhaVanya/MLProject.git
+    git remote add origin "repository"
     git push -u origin main
     if we did change in my repository and want to be present in work area, do
     git pull
@@ -40,3 +40,20 @@
 
     So whenever in setup.py, find_packages is there, it will just go and see how many folder have __init__.py then it will consider that as a package and will try to build this
     Once this is built it, we can import it anywhere whenever we want.
+
+10. In src folder, create "component" folder and create __init__.py in it. It need to created as package
+
+    Components are basically all the modules which we will be creating. 
+    For example 
+        Data Injection (Reading Dataset from database, divide into train and test) ->data_ingestion.py
+        Data Transformation (All the transformation will be here) ->data_transformation.py
+        Model Trainer(All training code of model) ->model_trainer.py
+
+11. In src folder, create "pipeline" folder
+
+    create __init__.py
+    One is the training pipeline and another is prediction pipeline. Create seperate train_pipeline.py file which will be triggering py file in component folder
+    Create seperate predict_pipeline.py(for prediction purpose)
+
+12. In src folder we will create 3 important file logger.py,exception.py and utils.py (common functionality will be present in utils)
+
