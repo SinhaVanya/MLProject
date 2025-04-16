@@ -1,0 +1,51 @@
+Till now we have trained our model, artifacts got created, model training done and got hyperparameter tuning and we have pickle file:
+1. Model.pkl
+2. Preprocessor.pkl
+
+Now we need to create prediction pipeline.
+This prediction pipeline is important. No we will try to create web application, which will be interacting with this kind of pkl file wrt any kind of input data that we give.
+In web application we will be having a form where where we will be giving all out input data that is required for predicting the student performance.
+Click on submit
+Internallly in back end capture the data and this data probably interacts with this pkl file.
+Then we will try to see that how whether we are able to get the prediction or not.
+
+1. Create app.py( we will be using flask app)
+In app.py:
+2. Import pickle
+3. from flask import Flask,request,render_template
+4. All required lib like numpy pandas
+5. from sklearn.preprocessing import StandardScaler - will use preprocessing pickle file
+
+Inside the src folder we have pipeline folder, that has two file:
+    a. predict_pipeline.py: In this we see how we can do prediction (First will craete this)
+    b. train_pipeline.py
+
+6. Lets create app in app.py file i.e. application=Flask(__name__). Here Flask(__name__) will basically give us the entry point where we need to execute it.
+7. assign the above variable to app as we need to create the route and all
+
+8.Lets create route for home page with @app.route('/')/ means home page.
+9. Create index function and that basically return render_template('index.html'). This render_template will search for index.html in "templates" folder.
+10. Create index.html in the folder.
+11.Route to predict data by @app.route('/predictdata') and method that will support is get, post
+12. Function will be created where we will probably get our data and then probably do the prediction everything
+13. Create render_template home.html where basically user will enter the values thus used to get values from user
+14. Above was in if block and for else block will be for post and the class mention in this block will be present in predict_pipeline
+
+Let's work on PredictPipeline.py file
+15. Import all libraraies
+16. Create empty constructor as shown below
+class PredictPipeline:
+    def __init__(self):
+        pass
+17. Lets create class CustomData that we used POST block of app.py in predict_pipeline.
+    CustomData class will be responsible in mapping all the inputs that we are giving in the HTML to the backend with this particular values
+18. Create get_data_as_data_frame that will return all the input in the form of get_data_as_data_frame. As we train our model as dataframe
+19. Now will work on PredictPipeline, create one more function i.e. def predict(self,features) and will be like model prediction
+    Add model and Preprocessor pkl file in it and do enteries accordingly
+
+20. Now we work in app.py for else block that will present Post.
+    Get data from data and convert to dataframe
+    Create predict_pipeline object
+
+
+
